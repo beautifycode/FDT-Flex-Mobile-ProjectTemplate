@@ -9,10 +9,10 @@
 		<!-- Global Stuff -->
 		<primaryGroup label="Options">
 			<group label="General Deploy Settings">
-				<variable name="appDesc" label="Android" default="false"
+				<variable name="devType" label="Android" default="true"
 					type="boolean"/>
 				<group label="Config" style="popupButton"
-					enableIf="${appDesc}">
+					enableIf="${devType}">
 					<group label="Set up your mobile Application">
 						<variable name="appTitle" label="Application name:"
 							default="Sample App" type="string"/>
