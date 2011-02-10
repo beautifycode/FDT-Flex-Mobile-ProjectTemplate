@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><application xmlns="http://ns.adobe.com/air/application/2.5" minimumPatchLevel="0">
+<!-- Mobile App-Descriptor [via beautifycode.com] -->
+	<id>${appId}</id>
+	<name>${projectName}</name>
+	<versionNumber>${appVersion}</versionNumber>
+	<versionLabel>${appVersion}</versionLabel>
+	<filename>${projectName}</filename>
+	<description>
+		<text xml:lang="en">This is a sample Adobe AIR mobile application.</text>
+		<text xml:lang="ja">これは Adobe AIR のサンプルアプリケーションです。</text>
+	</description>
+	<copyright>Copyright 2011, Example Co., Inc.</copyright>
+	<supportedProfiles>mobileDevice</supportedProfiles>
+	<initialWindow>
+		<content>${projectName}.swf</content>
+		<title>${appTitle}</title>
+		<aspectRatio>${appAspect}</aspectRatio>
+		<fullScreen>${appFullscreen}</fullScreen>
+		<autoOrients>${appAutoOrients}</autoOrients>
+		<renderMode>${appRendering}</renderMode>
+	</initialWindow>
+	
+	<android> 
+		<!-- 
+	    <manifestAdditions> 
+	        <![CDATA[ 
+	            <manifest> 
+	                <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> 
+	                <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> 
+	                <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> 
+	                <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> 
+	                <uses-permission android:name="android.permission.CAMERA" /> 
+	                <uses-permission android:name="android.permission.DISABLE_KEYGUARD" /> 
+	                <uses-permission android:name="android.permission.INTERNET" /> 
+	                <uses-permission android:name="android.permission.READ_PHONE_STATE" /> 
+	                <uses-permission android:name="android.permission.RECORD_AUDIO" /> 
+	                <uses-permission android:name="android.permission.WAKE_LOCK" /> 
+	                <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> 
+	            </manifest> 
+	        ]]> 
+	    </manifestAdditions> 
+		-->
+	</android>
+	
+	<icon> 
+	    <image36x36>assets/icon36.png</image36x36> 
+	    <image48x48>assets/icon48.png</image48x48> 
+	    <image72x72>assets/icon72.png</image72x72> 
+	</icon>
+</application>

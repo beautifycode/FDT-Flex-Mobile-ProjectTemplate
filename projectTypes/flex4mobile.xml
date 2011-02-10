@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:projectType xmlns:tns="http://fdt.powerflasher.com/ProjectType"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://fdt.powerflasher.com/ProjectType projectType.xsd ">
+	<name>Flex 4.5 Mobile</name>
+	<description>This project type defines a mobile Flex project for Adobe Integrated Runtime (AIR).
+It contains all necessary libraries according to the selected SDK and Flash Player version. No arguments are passed.</description>
+	<compatibleSdks>
+		<sdk min="4" max="4" />
+	</compatibleSdks>
+	<swcs>
+		<swc>
+			<path>frameworks/libs/air/airglobal.swc</path>
+		</swc>
+		<swc>
+			<path>frameworks/libs/mobile/mobilecomponents.swc</path>
+		</swc>
+        <swc>
+			<path>frameworks/libs/textLayout.swc</path>
+		</swc>
+        <swc>
+			<path>frameworks/libs/framework.swc</path>
+		</swc>
+        <swc>
+			<path>frameworks/libs/spark.swc</path>
+		</swc>
+        <swc>
+			<path>frameworks/libs/rpc.swc</path>
+		</swc>
+        <swc>
+			<path>frameworks/libs/datavisualization.swc</path>
+		</swc>
+        <swc>
+			<path>frameworks/libs/sparkskins.swc</path>
+		</swc>
+        <swc>
+			<path>frameworks/libs/utilities.swc</path>
+		</swc>
+		<swc>
+			<path>frameworks/libs/air/airframework.swc</path>
+		</swc>
+        <swc>
+			<path>frameworks/libs/air/airspark.swc</path>
+		</swc>
+        <swc>
+			<path>frameworks/libs/air/applicationupdater.swc</path>
+		</swc>
+        <swc>
+			<path>frameworks/libs/air/applicationupdater_ui.swc</path>
+		</swc>
+        <swc>
+			<path>frameworks/libs/air/servicemonitor.swc</path>
+		</swc>
+		 <swc>
+				<path>frameworks/themes/Mobile/mobile.swc</path>
+			</swc>
+	</swcs>
+	<runtime>AIR</runtime>
+	<compatiblePlayers>
+		<player default="true">AIR Debug Launcher</player>
+	</compatiblePlayers>
+	<compilerArguments passClasspath="true" passMainclass="true" passSwcs="true" passRsls="false">
+		<argument>-load-config="{flexSDK}/frameworks/airmobile-config.xml"</argument>
+		<argument>-target-player={playerVersion}</argument>
+		<argument>-library-path+="{flexSDK}/frameworks/locale/en_US"</argument>
+	</compilerArguments>
+</tns:projectType>
+

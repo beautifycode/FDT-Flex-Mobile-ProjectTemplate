@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:projectTemplate xmlns:tns="http://fdt.powerflasher.com/ProjectTemplate"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://fdt.powerflasher.com/ProjectTemplate ../../projectTemplate.xsd">
+	<name>Flex Hero Mobile</name>
+	<version>2.0</version>
+	<description>This template will create the mobile project '${projectName}' that contains mobile Flex 4.5 components and is targeting the Adobe Integrated Runtime (AIR 2.5).</description>
+	<projectType>Flex 4.5 Mobile</projectType>
+	<variables>
+		<!-- Global Stuff -->
+		<primaryGroup label="Options">
+			<group label="General Deploy Settings">
+				<variable name="appDesc" label="Android" default="false"
+					type="boolean"/>
+				<group label="Config" style="popupButton"
+					enableIf="${appDesc}">
+					<group label="Set up your mobile Application">
+						<variable name="appTitle" label="Application name:"
+							default="Sample App" type="string"/>
+						<variable name="appId" label="Application ID:"
+							default="com.example.SampleApp" type="string"/>
+						<variable name="appVersion" label="Version:"
+							default="1.0" type="string"/>
+
+						<variable name="deviceType" label="Resolution type:"
+							default="NexusOne" type="enum('NexusOne','WVGA','QVGA','Droid')"/>
+						<variable name="appAspect" label="Aspect ratio:"
+							default="portrait" type="enum('portrait','landscape','CPU')"/>
+						<variable name="appRendering" label="Rendering mode:"
+							default="auto" type="enum('auto','GPU','CPU')"/>
+						
+						<variable name="appAutoOrients" label="Orient automatically"
+							default="true" type="boolean"/>
+						<variable name="appFullscreen" label="Hide title bar (fullscreen)"
+							default="true" type="boolean"/>
+					</group>
+						<group label="Edit Permissions" style="popupButton"
+							enableIf="false">
+						</group>
+				</group>
+			</group>
+			
+			<!-- TODO: to do. -->
+			<group label="Certificate / Assets Settings">
+				<variable name="certEnabled" label="Generate Certificate" default="false"
+					type="boolean" enableIf="false"/>
+					<variable name="copyIcons" label="Copy Application Icons" default="true"
+						type="boolean"/>
+			</group>
+		</primaryGroup>
+	</variables>
+	<expressions>
+		<expression name="sourceFolder" value="src"/>
+		<expression name="outputFolder" value="bin"/>
+	</expressions>
+	<folders>
+		<sourceFolder>${sourceFolder}</sourceFolder>
+		<outputFolder>${outputFolder}</outputFolder>
+
+		<autoLibFolder>libs</autoLibFolder>
+	</folders>
+	<contentCreation processFileExtensions="mxml,xml,launch">
+
+		<!-- Always -->
+		<file src="mxml/Main.mxml" dest="src/${projectName}.mxml"
+			process="true"/>
+		<file src="mxml/views/MainView.mxml" dest="src/views/${projectName}View.mxml"
+			process="true"/>
+		<file src="launch/app.launch" dest=".settings/launch/${projectName}.launch"
+			process="true"/>
+
+		<!-- Icons -->
+		<file src="assets/icon36.png" dest="assets/icon36.png" if="${copyIcons}"/>
+		<file src="assets/icon48.png" dest="assets/icon48.png" if="${copyIcons}"/>
+		<file src="assets/icon72.png" dest="assets/icon72.png" if="${copyIcons}"/>
+
+		<!-- Application Descriptor File / TODO: iOS, BlackBerry -->
+		<file src="xml/app-android.xml" dest="${outputFolder}/${projectName}-app.xml"
+			process="true"/>
+		<file src="xml/app-android-icons.xml" dest="${outputFolder}/${projectName}-app.xml"
+			process="true" if="${copyIcons}"/>
+
+	</contentCreation>
+</tns:projectTemplate>
+
